@@ -1,0 +1,84 @@
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.text h1 em {
+  font-style: italic;
+  color: var(--gray-dark);
+}
+
+.text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 38ch;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--black);
+  color: var(--yellow);
+  padding: 0.85rem 2rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btnPrimary:hover {
+  background: var(--gray-dark);
+  transform: translateY(-2px);
+}
+
+.btnGhost {
+  display: inline-block;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 2px;
+  letter-spacing: 0.02em;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.btnGhost:hover {
+  color: var(--black);
+  border-color: var(--black);
+}
+
+.featured {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}

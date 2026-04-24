@@ -1,42 +1,67 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --yellow: #f5c518;
+  --yellow-dim: #c49a10;
+  --yellow-pale: #fdf6dc;
+
+  --black: #0a0a0a;
+  --white: #fafaf8;
+
+  --gray-light: #e8e6e0;
+  --gray-mid: #999791;
+  --gray-dark: #3a3936;
+
+  --text-primary: #0a0a0a;
+  --text-secondary: #5a5956;
+
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base link styles */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Utils */
+.divider {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.divider hr {
+  border: none;
+  border-top: 1px solid var(--gray-light);
+}
+
+/* Reading Progress */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--yellow);
+  z-index: 200;
+  width: 0%;
+  transition: width 0.1s linear;
 }

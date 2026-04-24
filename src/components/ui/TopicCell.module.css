@@ -1,0 +1,30 @@
+.cell {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition);
+  display: block;
+}
+
+.cell:hover {
+  background: var(--yellow-pale);
+}
+
+.icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.count {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
