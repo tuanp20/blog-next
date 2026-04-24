@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -6,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
-          Trang
+          <Logo />
         </Link>
         <nav className={styles.nav}>
           <Link href="/" className={styles.active}>

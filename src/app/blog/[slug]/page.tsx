@@ -30,7 +30,7 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       publishedTime: new Date(post.dateISO).toISOString(),
-      authors: ["Trang Nguyễn"],
+      authors: ["Tuân 20P"],
     },
     twitter: {
       card: "summary_large_image",
@@ -55,8 +55,8 @@ export default function PostDetail({ params }: PostPageProps) {
     author: [
       {
         "@type": "Person",
-        name: "Trang Nguyễn",
-        url: "https://trang.blog/about",
+        name: "Tuân 20P",
+        url: "https://twentypi.com/",
       },
     ],
     datePublished: new Date(post.dateISO).toISOString(),
@@ -106,8 +106,7 @@ export default function PostDetail({ params }: PostPageProps) {
             alignItems: "center",
           }}
         >
-          By Trang Nguyễn <span>·</span> {post.date} <span>·</span>{" "}
-          {post.readTime}
+          By Tuân 20P <span>·</span> {post.date} <span>·</span> {post.readTime}
         </div>
       </header>
 

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "@/components/ui/Logo";
 import styles from "@/app/crm/admin.module.css";
 
 const NAV_ITEMS = [
@@ -17,7 +18,7 @@ export default function AdminSidebar() {
     <aside className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
         <Link href="/crm" className={styles.logo}>
-          Trang
+          <Logo variant="light" size="sm" />
         </Link>
         <span className={styles.subtitle}>Workspace</span>
       </div>

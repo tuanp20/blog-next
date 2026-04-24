@@ -4,7 +4,7 @@ import AdminHeader from "@/components/admin/AdminHeader";
 import styles from "../admin.module.css";
 
 export default function CRMSettings() {
-  const [siteName, setSiteName] = useState("Trang | Blog Tối Giản");
+  const [siteName, setSiteName] = useState("TWENTY-PI | Blog Tối Giản");
   const [siteDesc, setSiteDesc] = useState(
     "Blog tối giản về thiết kế, công nghệ và cuộc sống.",
   );

@@ -32,7 +32,7 @@ export default function Hero() {
           label="Nổi bật"
           title="Khoảng trắng không phải là sự lãng phí"
           excerpt="Tại sao những trang web tốt nhất lại có ít thứ hơn bạn nghĩ — và tại sao ít lại có thể là nhiều hơn."
-          author="Trang Nguyễn"
+          author="Tuân 20P"
           date="12 Tháng 4"
           readTime="6 phút đọc"
           slug="khoang-trang-khong-phai-lang-phi"

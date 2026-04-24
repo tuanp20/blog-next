@@ -2,6 +2,7 @@ import Link from "next/link";
 import AdminHeader from "@/components/admin/AdminHeader";
 import styles from "../admin.module.css";
 import { getAllPosts } from "@/lib/posts";
+import { deletePostAction } from "@/lib/actions";
 
 export default function CRMPostsList() {
   const posts = getAllPosts();
@@ -81,28 +82,35 @@ export default function CRMPostsList() {
                       display: "flex",
                       gap: "0.5rem",
                       justifyContent: "flex-end",
+                      alignItems: "center",
                     }}
                   >
-                    <button
+                    <Link
+                      href={`/crm/posts/${post.slug}`}
                       className={styles.badge}
                       style={{
                         cursor: "pointer",
                         border: "1px solid var(--gray-light)",
+                        textDecoration: "none",
+                        display: "inline-block",
                       }}
                     >
                       Sửa
-                    </button>
-                    <button
-                      className={styles.badge}
-                      style={{
-                        cursor: "pointer",
-                        border: "1px solid #fce8e6",
-                        color: "#c5221f",
-                        background: "#fce8e6",
-                      }}
-                    >
-                      Xóa
-                    </button>
+                    </Link>
+                    <form action={deletePostAction.bind(null, post.slug)}>
+                      <button
+                        type="submit"
+                        className={styles.badge}
+                        style={{
+                          cursor: "pointer",
+                          border: "1px solid #fce8e6",
+                          color: "#c5221f",
+                          background: "#fce8e6",
+                        }}
+                      >
+                        Xóa
+                      </button>
+                    </form>
                   </td>
                 </tr>
               ))}

@@ -20,12 +20,9 @@
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.02em;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 1rem;
-}
-.brand .logo::after {
-  content: '.';
-  color: var(--yellow);
 }
 
 .brand p {

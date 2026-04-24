@@ -25,11 +25,8 @@
   text-decoration: none;
   letter-spacing: -0.02em;
   position: relative;
-}
-
-.logo::after {
-  content: '.';
-  color: var(--yellow);
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav {

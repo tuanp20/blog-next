@@ -3,7 +3,7 @@ import AdminSidebar from "@/components/admin/AdminSidebar";
 import styles from "./admin.module.css";
 
 export const metadata: Metadata = {
-  title: "Blog CRM",
+  title: "TWENTY-PI CRM",
   robots: {
     index: false,
     follow: false,

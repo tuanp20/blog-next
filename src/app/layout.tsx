@@ -18,8 +18,8 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Trang | Blog Tối Giản",
-    template: "%s | Trang Blog",
+    default: "TWENTY-PI | Blog Tối Giản",
+    template: "%s | TWENTY-PI",
   },
   description:
     "Blog tối giản về thiết kế, công nghệ và cuộc sống. Viết để suy nghĩ rõ hơn.",
@@ -31,19 +31,19 @@ export const metadata: Metadata = {
     "ux ui",
     "blog",
   ],
-  authors: [{ name: "Trang Nguyễn" }],
+  authors: [{ name: "Tuân 20P" }],
   openGraph: {
     type: "website",
     locale: "vi_VN",
     url: "https://trang.blog",
-    title: "Trang | Blog Tối Giản",
+    title: "TWENTY-PI | Blog Tối Giản",
     description:
       "Những ghi chép về thiết kế, công nghệ và cách con người tạo ra ý nghĩa từ thế giới số.",
-    siteName: "Trang Blog",
+    siteName: "TWENTY-PI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trang | Blog Tối Giản",
+    title: "TWENTY-PI | Blog Tối Giản",
     description:
       "Những ghi chép về thiết kế, công nghệ và cách con người tạo ra ý nghĩa từ thế giới số.",
   },

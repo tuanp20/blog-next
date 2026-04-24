@@ -2,21 +2,51 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import AdminHeader from "@/components/admin/AdminHeader";
 import styles from "../../admin.module.css";
+import { createPostAction } from "@/lib/actions";
 
 export default function NewPostPage() {
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
     tag: "Cuộc sống",
+    excerpt: "",
     content: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Mock Save Post:", formData);
-    alert("Bài viết đã được lưu thành công (Mock)!");
+    setIsSubmitting(true);
+
+    try {
+      const now = new Date();
+      const dateStr = now.toLocaleDateString("vi-VN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      const dateISO = now.toISOString().split("T")[0];
+
+      await createPostAction({
+        ...formData,
+        number: "00", // Default or calculated
+        date: dateStr,
+        dateISO: dateISO,
+        readTime: "5 phút", // Mock
+      });
+
+      alert("Bài viết đã được tạo thành công!");
+      router.push("/crm/posts");
+    } catch (error) {
+      console.error("Failed to create post:", error);
+      alert("Đã có lỗi xảy ra khi tạo bài viết.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -78,6 +108,20 @@ export default function NewPostPage() {
             </div>
 
             <div className={styles.formGroup}>
+              <label>Mô tả ngắn (Excerpt)</label>
+              <input
+                type="text"
+                className={styles.input}
+                placeholder="Một đoạn mô tả ngắn về bài viết..."
+                value={formData.excerpt}
+                onChange={(e) =>
+                  setFormData({ ...formData, excerpt: e.target.value })
+                }
+                required
+              />
+            </div>
+
+            <div className={styles.formGroup}>
               <label>Nội dung</label>
               <textarea
                 className={`${styles.input} ${styles.textarea}`}
@@ -94,8 +138,9 @@ export default function NewPostPage() {
               <button
                 type="submit"
                 className={`${styles.btn} ${styles.btnPrimary}`}
+                disabled={isSubmitting}
               >
-                Lưu bài viết
+                {isSubmitting ? "Đang lưu..." : "Lưu bài viết"}
               </button>
               <Link
                 href="/crm/posts"

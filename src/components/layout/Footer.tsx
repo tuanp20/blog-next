@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <Link href="/" className={styles.logo}>
-            Trang
+            <Logo />
           </Link>
           <p>
             Blog về trải nghiệm cá nhân, podcast và những góc nhìn sâu sắc về
@@ -72,8 +73,8 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <p>
-          © {new Date().getFullYear()} Trang <span>✦</span> Mọi quyền được bảo
-          lưu
+          © {new Date().getFullYear()} TWENTY-PI <span>✦</span> Mọi quyền được
+          bảo lưu
         </p>
         <p>
           Được xây dựng với <span>♥</span> và cảm hứng bất tận

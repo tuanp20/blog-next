@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const postUrls = posts.map((post) => ({
     url: `https://trang.blog/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.dateISO),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));

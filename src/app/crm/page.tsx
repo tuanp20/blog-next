@@ -4,7 +4,8 @@ import { getAllPosts } from "@/lib/posts";
 
 export default function CRMDashboard() {
   const posts = getAllPosts();
-  // Mock some stats
+  
+  // Mock some stats for views and subscribers
   const totalViews = "12.4K";
   const newSubscribers = 42;
 
