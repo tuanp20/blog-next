@@ -30,12 +30,12 @@ export default function Hero() {
       <div className={styles.featured}>
         <FeaturedCard
           label="Nổi bật"
-          title="Khoảng trắng không phải là sự lãng phí"
-          excerpt="Tại sao những trang web tốt nhất lại có ít thứ hơn bạn nghĩ — và tại sao ít lại có thể là nhiều hơn."
+          title="Những điều đáng học: 5 bậc thang của một mối quan hệ trọn vẹn"
+          excerpt="Bắt đầu với ngoại hình, kính trọng vì tài hoa, hợp nhau vì tính cách... Những suy ngẫm về hành trình kết nối với một con người."
           author="Tuân 20P"
-          date="12 Tháng 4"
-          readTime="6 phút đọc"
-          slug="khoang-trang-khong-phai-lang-phi"
+          date="24 Tháng 4"
+          readTime="5 phút đọc"
+          slug="nhung-dieu-dang-hoc"
         />
       </div>
     </section>
