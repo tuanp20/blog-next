@@ -14,7 +14,7 @@ export default function Hero() {
           thấy đời rõ hơn.
         </h1>
         <p>
-          Giữa thế giới số ồn ào, mình chọn cách dừng lại để nhặt nhạnh những mảnh vụn từ thiết kế, công nghệ và cuộc sống. 
+          Giữa thế giới số ồn ào, mình chọn cách dừng lại để nhặt nhạnh những mảnh vụn từ thiết kế, công nghệ và cuộc sống.
           Đây là nơi mình thanh lọc tâm trí, đi tìm những giá trị nhân văn ẩn sau mỗi điểm chạm thường nhật – để thấy mình, và thấy thế giới trọn vẹn hơn.
         </p>
         <div className={styles.cta}>
