@@ -17,20 +17,20 @@ export default function Newsletter() {
     <section className={styles.newsletter} id="newsletter">
       <div className={styles.inner}>
         <h2>
-          Đừng bỏ lỡ
+          Don&apos;t miss
           <br />
-          <em>bài viết tiếp theo</em>
+          <em>the next post</em>
         </h2>
         <p>
-          Mỗi tuần một bài — không spam, không quảng cáo. Chỉ là những suy nghĩ
-          đáng đọc được gửi thẳng đến hộp thư của bạn.
+          One post a week — no spam, no ads. Just thoughtful writing delivered
+          straight to your inbox.
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="email@của-bạn.com"
-            aria-label="Địa chỉ email"
+            placeholder="your@email.com"
+            aria-label="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={subscribed}
@@ -41,11 +41,11 @@ export default function Newsletter() {
             disabled={subscribed}
             className={subscribed ? styles.success : ""}
           >
-            {subscribed ? "✓ Đã đăng ký!" : "Đăng ký"}
+            {subscribed ? "✓ Subscribed!" : "Subscribe"}
           </button>
         </form>
         <p className={styles.note}>
-          Hơn 1,240 người đang đọc · Hủy đăng ký bất kỳ lúc nào
+          1,240+ readers · Unsubscribe anytime
         </p>
       </div>
     </section>
