@@ -9,13 +9,13 @@ export default function Hero() {
         <h1>
           Viết để
           <br />
-          <em>suy nghĩ</em>
+          <em>gói ghém tâm tư,</em>
           <br />
-          rõ hơn.
+          thấy đời rõ hơn.
         </h1>
         <p>
-          Những ghi chép về thiết kế, công nghệ và cách con người tạo ra ý nghĩa
-          từ thế giới số.
+          Giữa thế giới số ồn ào, mình chọn cách dừng lại để nhặt nhạnh những mảnh vụn từ thiết kế, công nghệ và cuộc sống. 
+          Đây là nơi mình thanh lọc tâm trí, đi tìm những giá trị nhân văn ẩn sau mỗi điểm chạm thường nhật – để thấy mình, và thấy thế giới trọn vẹn hơn.
         </p>
         <div className={styles.cta}>
           <Link href="/blog" className={styles.btnPrimary}>
