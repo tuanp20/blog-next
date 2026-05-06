@@ -1,19 +1,24 @@
+"use client";
+
 import TopicCell from "../ui/TopicCell";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Topics.module.css";
 
-const TOPICS = [
-  { icon: "✧", name: "Cuộc sống", count: 42, slug: "cuoc-song" },
-  { icon: "🎧", name: "Podcast", count: 12, slug: "podcast" },
-  { icon: "◈", name: "Trí tuệ nhân tạo", count: 28, slug: "ai" },
-  { icon: "◎", name: "Thiết kế", count: 24, slug: "thiet-ke" },
-];
-
 export default function Topics() {
+  const { t } = useLanguage();
+
+  const TOPICS = [
+    { icon: "✧", name: t.topicNames.lifestyle, count: 42, slug: "cuoc-song" },
+    { icon: "🎧", name: t.topicNames.podcast, count: 12, slug: "podcast" },
+    { icon: "◈", name: t.topicNames.ai, count: 28, slug: "ai" },
+    { icon: "◎", name: t.topicNames.design, count: 24, slug: "thiet-ke" },
+  ];
+
   return (
     <section className={styles.section} id="chu-de">
       <div className={styles.header}>
         <h2>
-          Chủ đề <span>khám phá</span>
+          {t.topics.heading1} <span>{t.topics.headingSpan}</span>
         </h2>
       </div>
       <div className={styles.grid}>

@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -10,44 +15,41 @@ export default function Footer() {
           <Link href="/" className={styles.logo}>
             <Logo />
           </Link>
-          <p>
-            Blog về trải nghiệm cá nhân, podcast và những góc nhìn sâu sắc về
-            Trí tuệ nhân tạo.
-          </p>
+          <p>{t.footer.tagline}</p>
         </div>
 
         <div className={styles.col}>
-          <h4>Khám phá</h4>
+          <h4>{t.footer.explore}</h4>
           <ul>
             <li>
-              <Link href="/">Trang chủ</Link>
+              <Link href="/">{t.nav.home}</Link>
             </li>
             <li>
-              <Link href="/blog">Tất cả bài viết</Link>
+              <Link href="/blog">{t.footer.allPosts}</Link>
             </li>
             <li>
-              <Link href="/category/podcast">Nghe Podcast</Link>
+              <Link href="/category/podcast">{t.footer.listenPodcast}</Link>
             </li>
           </ul>
         </div>
 
         <div className={styles.col}>
-          <h4>Chủ đề</h4>
+          <h4>{t.footer.topics}</h4>
           <ul>
             <li>
-              <Link href="/category/cuoc-song">Cuộc sống</Link>
+              <Link href="/category/cuoc-song">{t.footer.lifestyle}</Link>
             </li>
             <li>
-              <Link href="/category/podcast">Podcast</Link>
+              <Link href="/category/podcast">{t.footer.podcast}</Link>
             </li>
             <li>
-              <Link href="/category/ai">Trí tuệ nhân tạo</Link>
+              <Link href="/category/ai">{t.footer.ai}</Link>
             </li>
           </ul>
         </div>
 
         <div className={styles.col}>
-          <h4>Kết nối</h4>
+          <h4>{t.footer.connect}</h4>
           <ul>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer">
@@ -65,7 +67,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/#gioi-thieu">Về bài viết</Link>
+              <Link href="/#gioi-thieu">{t.footer.aboutBlog}</Link>
             </li>
           </ul>
         </div>
@@ -73,11 +75,10 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <p>
-          © {new Date().getFullYear()} TWENTY-PI <span>✦</span> Mọi quyền được
-          bảo lưu
+          © {new Date().getFullYear()} TWENTY-PI <span>✦</span> {t.footer.rights}
         </p>
         <p>
-          Được xây dựng với <span>♥</span> và cảm hứng bất tận
+          {t.footer.built}
         </p>
       </div>
     </footer>

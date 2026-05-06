@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/sections/Hero";
 import MarqueeStrip from "@/components/layout/MarqueeStrip";
 import LatestPosts from "@/components/sections/LatestPosts";

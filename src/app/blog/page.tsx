@@ -3,9 +3,9 @@ import { getAllPosts } from "@/lib/posts";
 import PostListItem from "@/components/ui/PostListItem";
 
 export const metadata: Metadata = {
-  title: "Tất cả bài viết",
+  title: "All Posts",
   description:
-    "Kho lưu trữ những suy nghĩ, ghi chép và bài viết về thiết kế, công nghệ.",
+    "An archive of thoughts, notes, and articles on design and technology.",
 };
 
 export default function BlogListing() {
@@ -21,10 +21,10 @@ export default function BlogListing() {
           letterSpacing: "-0.02em",
         }}
       >
-        Tất cả bài viết.
+        All Posts.
       </h1>
       <p style={{ color: "var(--text-secondary)", marginBottom: "4rem" }}>
-        Đọc tất cả {posts.length} ghi chép.
+        Read all {posts.length} notes.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column" }}>

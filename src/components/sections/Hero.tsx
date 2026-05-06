@@ -1,40 +1,42 @@
+"use client";
+
 import Link from "next/link";
 import FeaturedCard from "../ui/FeaturedCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.hero}>
       <div className={styles.text}>
         <h1>
-          Viết để
+          {t.hero.line1}
           <br />
-          <em>gói ghém tâm tư,</em>
+          <em>{t.hero.line2}</em>
           <br />
-          thấy đời rõ hơn.
+          {t.hero.line3}
         </h1>
-        <p>
-          Giữa thế giới số ồn ào, mình chọn cách dừng lại để nhặt nhạnh những mảnh vụn từ thiết kế, công nghệ và cuộc sống.
-          Đây là nơi mình thanh lọc tâm trí, đi tìm những giá trị nhân văn ẩn sau mỗi điểm chạm thường nhật – để thấy mình, và thấy thế giới trọn vẹn hơn.
-        </p>
+        <p>{t.hero.body}</p>
         <div className={styles.cta}>
           <Link href="/blog" className={styles.btnPrimary}>
-            Đọc bài mới nhất
+            {t.hero.readLatest}
           </Link>
-          <Link href="/#gioi-thieu" className={styles.btnGhost}>
-            Về blog này →
+          <Link href="/#about" className={styles.btnGhost}>
+            {t.hero.about}
           </Link>
         </div>
       </div>
 
       <div className={styles.featured}>
         <FeaturedCard
-          label="Nổi bật"
-          title="Những điều đáng học: 5 bậc thang của một mối quan hệ trọn vẹn"
-          excerpt="Bắt đầu với ngoại hình, kính trọng vì tài hoa, hợp nhau vì tính cách... Những suy ngẫm về hành trình kết nối với một con người."
+          label={t.hero.featuredLabel}
+          title="Things Worth Learning: 5 Levels of a Fulfilling Relationship"
+          excerpt="It starts with appearance, deepens through admiration for talent, and bonds over shared character... Reflections on the journey of truly connecting with another person."
           author="Tuân 20P"
-          date="24 Tháng 4"
-          readTime="5 phút đọc"
+          date="April 24"
+          readTime="5 min read"
           slug="nhung-dieu-dang-hoc"
         />
       </div>

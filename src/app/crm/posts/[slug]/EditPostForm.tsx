@@ -28,11 +28,11 @@ export default function EditPostForm({ post }: { post: Post }) {
         ...formData,
       });
 
-      alert("Bài viết đã được cập nhật thành công!");
+      alert("Post updated successfully!");
       router.push("/crm/posts");
     } catch (error) {
       console.error("Failed to update post:", error);
-      alert("Đã có lỗi xảy ra khi cập nhật bài viết.");
+      alert("An error occurred while updating the post.");
     } finally {
       setIsSubmitting(false);
     }
@@ -42,11 +42,11 @@ export default function EditPostForm({ post }: { post: Post }) {
     <div className={styles.card} style={{ maxWidth: "800px" }}>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label>Tiêu đề bài viết</label>
+          <label>Post Title</label>
           <input
             type="text"
             className={styles.input}
-            placeholder="Nhập tiêu đề..."
+            placeholder="Enter title..."
             value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
@@ -63,11 +63,11 @@ export default function EditPostForm({ post }: { post: Post }) {
           }}
         >
           <div className={styles.formGroup}>
-            <label>Đường dẫn (Slug)</label>
+            <label>URL Slug</label>
             <input
               type="text"
               className={styles.input}
-              placeholder="bai-viet-moi"
+              placeholder="new-post-slug"
               value={formData.slug}
               onChange={(e) =>
                 setFormData({ ...formData, slug: e.target.value })
@@ -77,29 +77,29 @@ export default function EditPostForm({ post }: { post: Post }) {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Chuyên mục</label>
+            <label>Category</label>
             <select
               className={styles.input}
               value={formData.tag}
               onChange={(e) => setFormData({ ...formData, tag: e.target.value })}
             >
-              <option value="Cuộc sống">Cuộc sống</option>
+              <option value="Cuộc sống">Life</option>
               <option value="Podcast">Podcast</option>
-              <option value="AI">Trí tuệ nhân tạo (AI)</option>
-              <option value="Thiết kế">Thiết kế</option>
+              <option value="AI">Artificial Intelligence (AI)</option>
+              <option value="Thiết kế">Design</option>
               <option value="Typography">Typography</option>
-              <option value="Tư duy">Tư duy</option>
-              <option value="Nổi bật">Nổi bật</option>
+              <option value="Tư duy">Thinking</option>
+              <option value="Nổi bật">Featured</option>
             </select>
           </div>
         </div>
 
         <div className={styles.formGroup}>
-          <label>Mô tả ngắn (Excerpt)</label>
+          <label>Short Description (Excerpt)</label>
           <input
             type="text"
             className={styles.input}
-            placeholder="Một đoạn mô tả ngắn về bài viết..."
+            placeholder="A short description of the post..."
             value={formData.excerpt}
             onChange={(e) =>
               setFormData({ ...formData, excerpt: e.target.value })
@@ -109,10 +109,10 @@ export default function EditPostForm({ post }: { post: Post }) {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Nội dung</label>
+          <label>Content</label>
           <textarea
             className={`${styles.input} ${styles.textarea}`}
-            placeholder="Viết nội dung bài của bạn ở đây (hỗ trợ Markdown/HTML)..."
+            placeholder="Write your post content here (Markdown/HTML supported)..."
             value={formData.content}
             onChange={(e) =>
               setFormData({ ...formData, content: e.target.value })
@@ -127,13 +127,13 @@ export default function EditPostForm({ post }: { post: Post }) {
             className={`${styles.btn} ${styles.btnPrimary}`}
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Đang lưu..." : "Cập nhật bài viết"}
+            {isSubmitting ? "Saving..." : "Update Post"}
           </button>
           <Link
             href="/crm/posts"
             className={`${styles.btn} ${styles.btnSecondary}`}
           >
-            Hủy
+            Cancel
           </Link>
         </div>
       </form>

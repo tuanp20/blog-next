@@ -2,15 +2,15 @@ import AdminHeader from "@/components/admin/AdminHeader";
 import styles from "../admin.module.css";
 
 const MOCK_CATEGORIES = [
-  { id: 1, name: "Cuộc sống", slug: "cuoc-song", count: 42 },
+  { id: 1, name: "Life", slug: "life", count: 42 },
   { id: 2, name: "Podcast", slug: "podcast", count: 12 },
-  { id: 3, name: "Trí tuệ nhân tạo (AI)", slug: "ai", count: 28 },
+  { id: 3, name: "Artificial Intelligence (AI)", slug: "ai", count: 28 },
 ];
 
 export default function CRMCategoriesList() {
   return (
     <>
-      <AdminHeader title="Quản lý chuyên mục" />
+      <AdminHeader title="Manage Categories" />
 
       <main className={styles.main}>
         <div
@@ -25,11 +25,11 @@ export default function CRMCategoriesList() {
               className={styles.input}
               style={{ width: "300px", display: "inline-block" }}
             >
-              🔍 Tìm chuyên mục...
+              🔍 Search categories...
             </div>
           </div>
           <button className={`${styles.btn} ${styles.btnPrimary}`}>
-            + Thêm chuyên mục
+            + Add Category
           </button>
         </div>
 
@@ -37,10 +37,10 @@ export default function CRMCategoriesList() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Tên chuyên mục</th>
-                <th>Slug đường dẫn</th>
-                <th>Số bài viết</th>
-                <th style={{ textAlign: "right" }}>Thao tác</th>
+                <th>Category Name</th>
+                <th>URL Slug</th>
+                <th>Post Count</th>
+                <th style={{ textAlign: "right" }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@ export default function CRMCategoriesList() {
                   <td style={{ color: "var(--text-secondary)" }}>
                     /{cat.slug}
                   </td>
-                  <td>{cat.count} bài</td>
+                  <td>{cat.count} posts</td>
                   <td
                     style={{
                       textAlign: "right",
@@ -66,7 +66,7 @@ export default function CRMCategoriesList() {
                         border: "1px solid var(--gray-light)",
                       }}
                     >
-                      Sửa
+                      Edit
                     </button>
                     <button
                       className={styles.badge}
@@ -77,7 +77,7 @@ export default function CRMCategoriesList() {
                         background: "#fce8e6",
                       }}
                     >
-                      Xóa
+                      Delete
                     </button>
                   </td>
                 </tr>

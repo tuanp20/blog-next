@@ -1,10 +1,13 @@
 "use client";
+
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Newsletter.module.css";
 
 export default function Newsletter() {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState("");
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,20 +20,17 @@ export default function Newsletter() {
     <section className={styles.newsletter} id="newsletter">
       <div className={styles.inner}>
         <h2>
-          Don&apos;t miss
+          {t.newsletter.heading1}
           <br />
-          <em>the next post</em>
+          <em>{t.newsletter.heading2}</em>
         </h2>
-        <p>
-          One post a week — no spam, no ads. Just thoughtful writing delivered
-          straight to your inbox.
-        </p>
+        <p>{t.newsletter.body}</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="your@email.com"
-            aria-label="Email address"
+            placeholder={t.newsletter.placeholder}
+            aria-label={t.newsletter.ariaLabel}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={subscribed}
@@ -41,12 +41,10 @@ export default function Newsletter() {
             disabled={subscribed}
             className={subscribed ? styles.success : ""}
           >
-            {subscribed ? "✓ Subscribed!" : "Subscribe"}
+            {subscribed ? t.newsletter.subscribed : t.newsletter.subscribe}
           </button>
         </form>
-        <p className={styles.note}>
-          1,240+ readers · Unsubscribe anytime
-        </p>
+        <p className={styles.note}>{t.newsletter.note}</p>
       </div>
     </section>
   );

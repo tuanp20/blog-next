@@ -5,10 +5,10 @@ import Logo from "@/components/ui/Logo";
 import styles from "@/app/crm/admin.module.css";
 
 const NAV_ITEMS = [
-  { label: "Tổng quan", href: "/crm", icon: "📊" },
-  { label: "Bài viết", href: "/crm/posts", icon: "📝" },
-  { label: "Chuyên mục", href: "/crm/categories", icon: "📁" },
-  { label: "Cài đặt", href: "/crm/settings", icon: "⚙️" },
+  { label: "Dashboard", href: "/crm", icon: "📊" },
+  { label: "Posts", href: "/crm/posts", icon: "📝" },
+  { label: "Categories", href: "/crm/categories", icon: "📁" },
+  { label: "Settings", href: "/crm/settings", icon: "⚙️" },
 ];
 
 export default function AdminSidebar() {
@@ -56,7 +56,7 @@ export default function AdminSidebar() {
             gap: "0.5rem",
           }}
         >
-          <span>←</span> Quay lại Blog
+          <span>←</span> Back to Blog
         </Link>
       </div>
     </aside>

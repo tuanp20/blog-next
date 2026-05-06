@@ -1,7 +1,7 @@
 import styles from "@/app/crm/admin.module.css";
 
 export default function AdminHeader({ title }: { title: string }) {
-  const today = new Date().toLocaleDateString("vi-VN", {
+  const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",

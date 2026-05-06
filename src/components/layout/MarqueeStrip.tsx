@@ -1,19 +1,12 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./MarqueeStrip.module.css";
 
-const items = [
-  "Cuộc sống",
-  "Podcast",
-  "Trí tuệ nhân tạo",
-  "Phát triển bản thân",
-  "Công nghệ",
-  "UX / UI",
-  "Stories",
-  "Suy ngẫm",
-];
-
 export default function MarqueeStrip({ className }: { className?: string }) {
-  // Duplicate array 2 times to ensure seamless scrolling
-  const duplicateItems = [...items, ...items, ...items];
+  const { t } = useLanguage();
+  // Duplicate array 3 times to ensure seamless scrolling
+  const duplicateItems = [...t.marquee, ...t.marquee, ...t.marquee];
 
   return (
     <div className={`${styles.strip} ${className || ""}`} aria-hidden="true">

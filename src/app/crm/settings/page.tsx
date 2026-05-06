@@ -4,20 +4,20 @@ import AdminHeader from "@/components/admin/AdminHeader";
 import styles from "../admin.module.css";
 
 export default function CRMSettings() {
-  const [siteName, setSiteName] = useState("TWENTY-PI | Blog Tối Giản");
+  const [siteName, setSiteName] = useState("TWENTY-PI | Life in Many Colors");
   const [siteDesc, setSiteDesc] = useState(
-    "Blog tối giản về thiết kế, công nghệ và cuộc sống.",
+    "My perspectives on life and technology. Writing to think more clearly.",
   );
   const [itemsPerPage, setItemsPerPage] = useState("10");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Cài đặt đã được lưu (Mock)!");
+    alert("Settings saved (Mock)!");
   };
 
   return (
     <>
-      <AdminHeader title="Cài đặt hệ thống" />
+      <AdminHeader title="System Settings" />
 
       <main className={styles.main}>
         <div className={styles.card} style={{ maxWidth: "800px" }}>
@@ -29,11 +29,11 @@ export default function CRMSettings() {
                 fontFamily: "var(--font-display)",
               }}
             >
-              Thông tin chung
+              General Information
             </h3>
 
             <div className={styles.formGroup}>
-              <label>Tên Website (Site Name)</label>
+              <label>Website Name (Site Name)</label>
               <input
                 type="text"
                 className={styles.input}
@@ -43,7 +43,7 @@ export default function CRMSettings() {
             </div>
 
             <div className={styles.formGroup}>
-              <label>Mô tả ngắn (Description - Meta SEO)</label>
+              <label>Short Description (Description - Meta SEO)</label>
               <textarea
                 className={styles.input}
                 style={{ minHeight: "80px", resize: "vertical" }}
@@ -53,17 +53,17 @@ export default function CRMSettings() {
             </div>
 
             <div className={styles.formGroup}>
-              <label>Số bài viết trên một trang</label>
+              <label>Posts Per Page</label>
               <select
                 className={styles.input}
                 style={{ width: "200px" }}
                 value={itemsPerPage}
                 onChange={(e) => setItemsPerPage(e.target.value)}
               >
-                <option value="5">5 bài</option>
-                <option value="10">10 bài</option>
-                <option value="15">15 bài</option>
-                <option value="20">20 bài</option>
+                <option value="5">5 posts</option>
+                <option value="10">10 posts</option>
+                <option value="15">15 posts</option>
+                <option value="20">20 posts</option>
               </select>
             </div>
 
@@ -75,7 +75,7 @@ export default function CRMSettings() {
                 color: "#c5221f",
               }}
             >
-              Vùng nguy hiểm
+              Danger Zone
             </h3>
 
             <div
@@ -83,7 +83,7 @@ export default function CRMSettings() {
               style={{ border: "1px solid #fce8e6", background: "#fef7f6" }}
             >
               <h4 style={{ marginBottom: "0.5rem", color: "#c5221f" }}>
-                Bảo trì dữ liệu
+                Data Maintenance
               </h4>
               <p
                 style={{
@@ -92,14 +92,14 @@ export default function CRMSettings() {
                   marginBottom: "1rem",
                 }}
               >
-                Xóa toàn bộ cache hoặc reset bộ đếm dữ liệu người dùng.
+                Clear all cache or reset user data counters.
               </p>
               <button
                 type="button"
                 className={styles.btn}
                 style={{ background: "#c5221f", color: "#fff" }}
               >
-                Clear Cache Dữ Liệu
+                Clear Data Cache
               </button>
             </div>
 
@@ -114,7 +114,7 @@ export default function CRMSettings() {
                 type="submit"
                 className={`${styles.btn} ${styles.btnPrimary}`}
               >
-                Lưu cấu hình
+                Save Changes
               </button>
             </div>
           </form>

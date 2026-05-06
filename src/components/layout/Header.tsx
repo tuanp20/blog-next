@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
+import LanguageToggle from "@/components/ui/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const { t } = useLanguage();
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -11,15 +17,18 @@ export default function Header() {
         </Link>
         <nav className={styles.nav}>
           <Link href="/" className={styles.active}>
-            Trang chủ
+            {t.nav.home}
           </Link>
-          <Link href="/category/cuoc-song">Cuộc sống</Link>
-          <Link href="/category/podcast">Podcast</Link>
-          <Link href="/category/ai">AI</Link>
+          <Link href="/category/cuoc-song">{t.nav.lifestyle}</Link>
+          <Link href="/category/podcast">{t.nav.podcast}</Link>
+          <Link href="/category/ai">{t.nav.ai}</Link>
         </nav>
-        <Link href="/#newsletter" className={styles.btnSubscribe}>
-          Đăng ký
-        </Link>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <LanguageToggle />
+          <Link href="/#newsletter" className={styles.btnSubscribe}>
+            {t.nav.subscribe}
+          </Link>
+        </div>
       </div>
     </header>
   );

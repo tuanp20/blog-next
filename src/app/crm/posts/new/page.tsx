@@ -13,7 +13,7 @@ export default function NewPostPage() {
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
-    tag: "Cuộc sống",
+    tag: "Life",
     excerpt: "",
     content: "",
   });
@@ -24,7 +24,7 @@ export default function NewPostPage() {
 
     try {
       const now = new Date();
-      const dateStr = now.toLocaleDateString("vi-VN", {
+      const dateStr = now.toLocaleDateString("en-US", {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -36,14 +36,14 @@ export default function NewPostPage() {
         number: "00", // Default or calculated
         date: dateStr,
         dateISO: dateISO,
-        readTime: "5 phút", // Mock
+        readTime: "5 min", // Mock
       });
 
-      alert("Bài viết đã được tạo thành công!");
+      alert("Post created successfully!");
       router.push("/crm/posts");
     } catch (error) {
       console.error("Failed to create post:", error);
-      alert("Đã có lỗi xảy ra khi tạo bài viết.");
+      alert("An error occurred while creating the post.");
     } finally {
       setIsSubmitting(false);
     }
@@ -51,17 +51,17 @@ export default function NewPostPage() {
 
   return (
     <>
-      <AdminHeader title="Thêm bài viết mới" />
+      <AdminHeader title="Add New Post" />
 
       <main className={styles.main}>
         <div className={styles.card} style={{ maxWidth: "800px" }}>
           <form onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
-              <label>Tiêu đề bài viết</label>
+              <label>Post Title</label>
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Nhập tiêu đề..."
+                placeholder="Enter title..."
                 value={formData.title}
                 onChange={(e) =>
                   setFormData({ ...formData, title: e.target.value })
@@ -78,11 +78,11 @@ export default function NewPostPage() {
               }}
             >
               <div className={styles.formGroup}>
-                <label>Đường dẫn (Slug)</label>
+                <label>URL Slug</label>
                 <input
                   type="text"
                   className={styles.input}
-                  placeholder="bai-viet-moi"
+                  placeholder="new-post-slug"
                   value={formData.slug}
                   onChange={(e) =>
                     setFormData({ ...formData, slug: e.target.value })
@@ -92,7 +92,7 @@ export default function NewPostPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label>Chuyên mục</label>
+                <label>Category</label>
                 <select
                   className={styles.input}
                   value={formData.tag}
@@ -100,19 +100,19 @@ export default function NewPostPage() {
                     setFormData({ ...formData, tag: e.target.value })
                   }
                 >
-                  <option value="Cuộc sống">Cuộc sống</option>
+                  <option value="Life">Life</option>
                   <option value="Podcast">Podcast</option>
-                  <option value="AI">Trí tuệ nhân tạo (AI)</option>
+                  <option value="AI">Artificial Intelligence (AI)</option>
                 </select>
               </div>
             </div>
 
             <div className={styles.formGroup}>
-              <label>Mô tả ngắn (Excerpt)</label>
+              <label>Short Description (Excerpt)</label>
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Một đoạn mô tả ngắn về bài viết..."
+                placeholder="A short description of the post..."
                 value={formData.excerpt}
                 onChange={(e) =>
                   setFormData({ ...formData, excerpt: e.target.value })
@@ -122,10 +122,10 @@ export default function NewPostPage() {
             </div>
 
             <div className={styles.formGroup}>
-              <label>Nội dung</label>
+              <label>Content</label>
               <textarea
                 className={`${styles.input} ${styles.textarea}`}
-                placeholder="Viết nội dung bài của bạn ở đây (hỗ trợ Markdown/HTML)..."
+                placeholder="Write your post content here (Markdown/HTML supported)..."
                 value={formData.content}
                 onChange={(e) =>
                   setFormData({ ...formData, content: e.target.value })
@@ -140,13 +140,13 @@ export default function NewPostPage() {
                 className={`${styles.btn} ${styles.btnPrimary}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Đang lưu..." : "Lưu bài viết"}
+                {isSubmitting ? "Saving..." : "Save Post"}
               </button>
               <Link
                 href="/crm/posts"
                 className={`${styles.btn} ${styles.btnSecondary}`}
               >
-                Hủy
+                Cancel
               </Link>
             </div>
           </form>

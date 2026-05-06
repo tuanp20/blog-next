@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Providers from "@/app/providers";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -18,15 +17,15 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "TWENTY-PI | Blog Tối Giản",
+    default: "TWENTY-PI | Life in All Its Colors",
     template: "%s | TWENTY-PI",
   },
   description:
-    "Blog tối giản về thiết kế, công nghệ và cuộc sống. Viết để suy nghĩ rõ hơn.",
+    "My perspectives on life and technology. Writing to think more clearly.",
   keywords: [
-    "thiết kế",
-    "công nghệ",
-    "tối giản",
+    "design",
+    "technology",
+    "minimalism",
     "typography",
     "ux ui",
     "blog",
@@ -34,18 +33,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Tuân 20P" }],
   openGraph: {
     type: "website",
-    locale: "vi_VN",
+    locale: "en_US",
     url: "https://trang.blog",
-    title: "TWENTY-PI | Blog Tối Giản",
+    title: "TWENTY-PI | Life in All Its Colors",
     description:
-      "Những ghi chép về thiết kế, công nghệ và cách con người tạo ra ý nghĩa từ thế giới số.",
+      "My perspectives on life and technology. Writing to think more clearly.",
     siteName: "TWENTY-PI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TWENTY-PI | Blog Tối Giản",
+    title: "TWENTY-PI | Life in All Its Colors",
     description:
-      "Những ghi chép về thiết kế, công nghệ và cách con người tạo ra ý nghĩa từ thế giới số.",
+      "My perspectives on life and technology. Writing to think more clearly.",
   },
   robots: {
     index: true,
@@ -66,12 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body>
-        <div id="reading-progress"></div>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <div id="reading-progress"></div>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );

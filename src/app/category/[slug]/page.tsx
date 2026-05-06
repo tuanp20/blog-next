@@ -10,7 +10,7 @@ interface CategoryPageProps {
 
 // Helper to map UI slug to internal Data Tags
 const mapSlugToTag = (slug: string) => {
-  if (slug === "cuoc-song") return "Cuộc sống";
+  if (slug === "cuoc-song") return "Lifestyle";
   if (slug === "podcast") return "Podcast";
   if (slug === "ai") return "AI";
   return null;
@@ -27,8 +27,8 @@ export async function generateMetadata({
   if (!tag) return { title: "Not Found" };
 
   return {
-    title: `Chủ đề: ${tag}`,
-    description: `Khám phá các bài viết và podcast thuộc chủ đề ${tag}.`,
+    title: `Category: ${tag}`,
+    description: `Explore articles and podcasts in the ${tag} category.`,
   };
 }
 
@@ -39,7 +39,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  // Lọc bài viết theo tag
+  // Filter posts by tag
   const allPosts = getAllPosts();
   const filteredPosts = allPosts.filter((post) => post.tag === tag);
 
@@ -55,7 +55,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             fontWeight: 600,
           }}
         >
-          Chuyên mục
+          Category
         </span>
         <h1
           style={{
@@ -72,11 +72,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
         {filteredPosts.length === 0 ? (
           <p style={{ color: "var(--text-secondary)" }}>
-            Chưa có nội dung cho chủ đề này.
+            No content available for this category yet.
           </p>
         ) : (
           filteredPosts.map((post) => {
-            // Nếu là Podcast, render PodcastCard
+            // If Podcast, render PodcastCard
             if (tag === "Podcast") {
               return (
                 <PodcastCard
@@ -85,12 +85,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   title={post.title}
                   excerpt={post.excerpt}
                   date={post.date}
-                  audioDuration={post.audioDuration || "0 phút"}
+                  audioDuration={post.audioDuration || "0 min"}
                   slug={post.slug}
                 />
               );
             }
-            // Mặc định render danh sách bài viết
+            // Default: render post list item
             return <PostListItem key={post.slug} {...post} />;
           })
         )}

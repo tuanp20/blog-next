@@ -9,7 +9,7 @@ export default function CRMPostsList() {
 
   return (
     <>
-      <AdminHeader title="Quản lý bài viết" />
+      <AdminHeader title="Post Management" />
 
       <main className={styles.main}>
         <div
@@ -24,14 +24,14 @@ export default function CRMPostsList() {
               className={styles.input}
               style={{ width: "300px", display: "inline-block" }}
             >
-              🔍 Tìm kiếm bài viết...
+              🔍 Search posts...
             </div>
           </div>
           <Link
             href="/crm/posts/new"
             className={`${styles.btn} ${styles.btnPrimary}`}
           >
-            + Thêm bài viết
+            + Add Post
           </Link>
         </div>
 
@@ -39,11 +39,11 @@ export default function CRMPostsList() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Tiêu đề</th>
-                <th>Chuyên mục</th>
-                <th>Ngày xuất bản</th>
-                <th>Trạng thái</th>
-                <th style={{ textAlign: "right" }}>Thao tác</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Published Date</th>
+                <th>Status</th>
+                <th style={{ textAlign: "right" }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -73,7 +73,7 @@ export default function CRMPostsList() {
                       className={styles.badge}
                       style={{ background: "#e6f4ea", color: "#137333" }}
                     >
-                      Đã xuất bản
+                      Published
                     </span>
                   </td>
                   <td
@@ -95,7 +95,7 @@ export default function CRMPostsList() {
                         display: "inline-block",
                       }}
                     >
-                      Sửa
+                      Edit
                     </Link>
                     <form action={deletePostAction.bind(null, post.slug)}>
                       <button
@@ -108,7 +108,7 @@ export default function CRMPostsList() {
                           background: "#fce8e6",
                         }}
                       >
-                        Xóa
+                        Delete
                       </button>
                     </form>
                   </td>

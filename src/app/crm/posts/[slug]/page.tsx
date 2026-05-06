@@ -17,7 +17,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
   return (
     <>
-      <AdminHeader title={`Sửa bài viết: ${post.title}`} />
+      <AdminHeader title={`Edit Post: ${post.title}`} />
       <main className={styles.main}>
         <EditPostForm post={post} />
       </main>

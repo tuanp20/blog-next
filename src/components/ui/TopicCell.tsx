@@ -13,7 +13,7 @@ export default function TopicCell({ icon, name, count, slug }: TopicCellProps) {
     <Link href={`/#${slug}`} className={styles.cell}>
       <span className={styles.icon}>{icon}</span>
       <div className={styles.name}>{name}</div>
-      <div className={styles.count}>{count} bài viết</div>
+      <div className={styles.count}>{count} articles</div>
     </Link>
   );
 }
